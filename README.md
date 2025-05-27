@@ -1,31 +1,26 @@
-# 🏡 Task 4: Boston Housing Price Prediction using Linear Regression
+# 🏡 Task 4: Boston Housing Price Prediction using Multiple Regression Models
 
-This project involves building a **Linear Regression** model to predict median house prices in the Boston area based on various features such as crime rate, number of rooms, and property tax rate.
+This project focuses on predicting **Boston house prices** using multiple regression algorithms and comparing their performance on accuracy and generalization.
 
 ---
 
 ## 📁 Dataset
 
-- **Source**: [Scikit-learn's Boston Housing Dataset]
-- **Records**: 506
-- **Features**:
-  - CRIM: Crime rate per capita
-  - RM: Average number of rooms per dwelling
-  - LSTAT: % of lower status population
-  - TAX, PTRATIO, etc.
-- **Target**:
-  - MEDV: Median value of owner-occupied homes (in $1000s)
+- **Source**: Scikit-learn’s built-in Boston Housing dataset
+- **Samples**: 506
+- **Features**: 13 numerical features
+- **Target**: MEDV — Median value of owner-occupied homes (in $1000s)
 
-> ⚠️ Note: This dataset has been deprecated in newer versions of scikit-learn due to ethical concerns. Use with awareness for learning purposes only.
+> ⚠️ Note: The dataset has been deprecated in scikit-learn due to ethical concerns. It's used here for educational purposes only.
 
 ---
 
 ## 🧠 Objective
 
-To build a regression model that:
-- Understands the relationship between input variables and house prices
-- Predicts house prices based on features
-- Evaluates performance using RMSE and R² score
+To predict housing prices based on various neighborhood and property-related attributes using:
+- Linear Regression
+- Random Forest Regressor
+- XGBoost Regressor
 
 ---
 
@@ -34,6 +29,7 @@ To build a regression model that:
 - **Python**
 - **Jupyter Notebook**
 - **Scikit-learn**
+- **XGBoost**
 - **Pandas**, **NumPy**
 - **Matplotlib / Seaborn**
 
@@ -41,21 +37,48 @@ To build a regression model that:
 
 ## ⚙️ Workflow
 
-1. **Load & explore data**
-2. **Feature-target separation**
-3. **Train-test split**
-4. **Train Linear Regression model**
-5. **Predict on test data**
-6. **Evaluate using**:
-   - Mean Squared Error (MSE)
+1. **Data Exploration & Cleaning**
+2. **Feature and Target Separation**
+3. **Train-Test Split**
+4. **Model Training**:
+   - 🔹 Linear Regression
+   - 🌲 Random Forest Regressor
+   - ⚡ XGBoost Regressor
+5. **Performance Metrics**:
    - Root Mean Squared Error (RMSE)
    - R² Score
-7. **Visualize predictions vs actuals**
+6. **Visual Analysis**:
+   - Predicted vs Actual plots
+   - Residual plots
 
 ---
 
-## 📊 Sample Output
+## 📊 Model Comparison
 
-```python
-RMSE: 4.79
-R² Score: 0.73
+| Model               | RMSE   | R² Score |
+|--------------------|--------|----------|
+| Linear Regression   | 4.79   | 0.73     |
+| Random Forest       | 2.90   | 0.91     |
+| XGBoost Regressor   | 2.72   | 0.93     |
+
+> ✅ XGBoost gave the **best performance**, followed closely by Random Forest.
+
+---
+
+## 📈 Visual Insights
+
+- Linear regression showed higher residuals on outliers
+- Random Forest smoothed predictions better
+- XGBoost handled variance and bias optimally
+
+---
+
+## ✅ Key Learnings
+
+- Tree-based models outperform linear models for complex relationships
+- XGBoost provides regularization and better control over overfitting
+- RMSE and R² are key to evaluating regression models beyond just accuracy
+
+---
+
+
